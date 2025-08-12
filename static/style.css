@@ -1,0 +1,152 @@
+/* * This CSS has been updated to fix the layout issue where the diagnosis result
+ * was not visible because the content was overflowing the page.
+ */
+
+body {
+    font-family: Arial, sans-serif;
+    /* Updated background color from your provided code */
+    background-color: #a192c4; /* A very light, soothing blue */
+
+    color: #313233;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns content to the top */
+    min-height: 100vh;
+    /* * ADDED: This line ensures that if the content is taller than the viewport,
+     * a vertical scrollbar will appear, making all content accessible.
+     */
+    overflow-y: auto;
+}
+
+.image-display-area {
+    text-align: center; /* Center the content (which is the image) horizontally */
+    margin-top: 20px; /* Keep the top margin */
+    margin-bottom: 20px; /* Add some margin below the image */
+}
+
+#uploaded-image {
+    display: block; /* Ensure it takes up the full width of its parent for centering to work properly */
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+form {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Space between form elements */
+}
+
+/* New styles for the diagnosis type selection layout */
+.diagnosis-type-selection {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Center horizontally */
+    gap: 15px; /* Space between the label and the select dropdown */
+    margin-bottom: 15px; /* Space below this section */
+}
+
+.diagnosis-type-selection label {
+    font-weight: bold;
+    color: #0056b3;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+select#model-select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+select#model-select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+input[type="file"] {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    max-width: 300px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.result-box {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #e9f7ff;
+    margin-top: 20px;
+}
+
+.result-box h2 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+#diagnosis-result {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+#confidence-score {
+    font-size: 1em;
+    color: #555;
+    margin-top: 5px;
+}
+
+.error-message {
+    color: #dc3545; /* Red color for errors */
+    margin-top: 15px;
+    font-weight: bold;
+}

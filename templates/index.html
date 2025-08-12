@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Image Diagnosis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Diagnostic Vision and Smartscan Med</h1> <p>Select a model and upload an image for diagnosis.</p>
+
+        <form id="upload-form" enctype="multipart/form-data">
+            <div class="diagnosis-type-selection">
+                <label for="model-select">Choose Diagnosis Type:</label>
+                <select name="model_type" id="model-select">
+                    <option value="covid">COVID-19 X-ray</option>
+                    <option value="brain_tumor">Brain Tumor MRI</option>
+                </select>
+            </div>
+            <br>
+            <input type="file" name="file" id="file-input" accept="image/*">
+            <button type="submit" id="submit-button">Get Diagnosis</button>
+        </form>
+
+        <div class="image-display-area">
+            <img id="uploaded-image" src="" alt="Uploaded X-ray Image" style="display: none; max-width: 100%; height: auto; margin-top: 20px;">
+        </div>
+
+        <div class="result-box">
+            <h2>Diagnosis Result:</h2>
+            <p id="diagnosis-result">Select a model, upload an image, and click 'Get Diagnosis' to see the result.</p>
+            <p id="confidence-score"></p>
+        </div>
+
+        <div class="error-message" id="error-message"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
